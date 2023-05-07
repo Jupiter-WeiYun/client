@@ -3,7 +3,9 @@
     <style>
         .backGroundImg{
             background-repeat:no-repeat;
-            
+            width: 100%;
+            background-size: contain;
+            background-attachment: fixed;
         }
     </style>
     <body style="
@@ -18,13 +20,43 @@
     "class="backGroundImg">
         <title>史复官网</title>
         <!--网站总共分4部分：导航栏 
-                            总标题（标题 后面是图片 向下滑动时隐藏
-                            正文
-                            下部边框
+                            总标题
+                            左下投稿栏
          -->
         
         <!--导航栏-->
         <style>
+            h1 { 
+                animation: titleFadeIn ease 2.2s; 
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            } 
+            h2 {
+                animation: textFadeIn ease 2s; 
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+            @keyframes titleFadeIn { 
+                0% { 
+                    opacity: 0;
+                } 
+                100% { 
+                    opacity: 1; 
+                } 
+            }
+            @keyframes textFadeIn{
+                0% {
+                    opacity: 0;
+                }
+                20%{
+                    opacity: 0;
+                }
+                120%{
+                    opacity: 1;
+                }
+            }
+
+
             .fadein {
                 animation: fadein .5s;
             }
@@ -46,7 +78,7 @@
                 display: none;
                 position: absolute;
                 z-index: 10;
-                background-color: #707070;
+                background-color: rgba(112,112,112,75%);
                 min-width: 150px;
                 min-height: 100%;
             }
@@ -78,13 +110,11 @@
                     padding: 0;
                     width: 100%;
                     height: 15%;
-                    background-color: #707070;
                 }
                 a:link,a:visited {
                     display: block;
                     font-weight: bold;
                     color: #FFFFFF;
-                    background-color: #707070;
                     width: 100%;
                     padding-top: 8%;
                     padding-bottom: 8%;
@@ -93,7 +123,7 @@
                     text-transform: uppercase;
                 }
                 a:hover,a:active {
-                    background-color:#4f4f4f;
+                    background-color:rgba(79,79,79,75%);
                 }
                 li {
                     width: 100%;
@@ -106,8 +136,9 @@
                     <li><a href="./index.html">首页 </a></li>
                     <li><a href="http://backroomssandboxcn.wikidot.com/jwbujue">访问另一个官网 </a></li>
                     <li><a href="./box.html">游戏箱 </a></li>
+                    <li><a href="./ack-list.html">致谢名单</a></li>
                     <li><a href="./update.html">更新日志 </a></li>
-                    <li><a href="./join-our-server.html" style="margin-top: 287%;">加入我们的MC服务器</a></li>
+                    <li><a href="./join-our-server.html" style="margin-block-end: 100%; margin-bottom: 0%;">加入我们的MC服务器</a></li>
                 </ul>
             </div>
         </div>
@@ -118,17 +149,65 @@
             }
         </style>
 
+        
+
+
+
         <!--总标题-->
         <h1 style="
-            color: #FFFFFF;
+            color: #cfcfcf;
             font-family: mcFont;
             font-size: 750%;
             position: absolute;
             width: 100%;
             height: 60%;
-            margin-top: 14%;
+            margin-top: 16%;
             text-align: center;
+            text-shadow: #708090
         ">史 复 官 网</h1>
+
+        
+        <!--随机诗句-->
+        <h2 id="poem" style="
+            text-shadow: #708090;
+            position: absolute;
+            width: 100%;
+            margin-top: 30%;
+            color: #cfcfcf;
+            text-align: center;
+            font-family: mcFont;
+        ">（；´д｀）ゞ 哎呀 网页还没加载好呢</h2>
+
+        <script>
+            function randomNum(minNum,maxNum){ 
+                switch(arguments.length){ 
+                    case 1: 
+                        return parseInt(Math.random()*minNum+1,10); 
+                        break; 
+                    case 2: 
+                        return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+                        break; 
+                    default: 
+                        return 0; 
+                        break; 
+                } 
+            }
+
+            var poem = [
+                "何方可化身千亿? 一树梅花一放翁",
+                "云横秦岭家何在  雪拥蓝关马不前",
+                "曾记否? 到中流击水  浪遏飞舟",
+                "羽檄从北来  厉马登高堤",
+                "四海翻腾云水怒  五洲震荡风雷激",
+                "秦皇岛外打鱼船  一片汪洋都不见 知问谁边?",
+                "长恨此身非我有  何时忘却营营",
+                "挟飞仙以遨游  抱明月而长终",
+                "全世界无产者联合起来!"
+            ]
+            var length = poem.length;
+            document.getElementById("poem").innerHTML=poem[randomNum(0,length - 1)];
+
+        </script>
 
     </body>
 </html>
