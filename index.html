@@ -21,8 +21,7 @@
         <title>史复官网</title>
         <!--网站总共分4部分：导航栏 
                             总标题
-                            左下投稿栏
-         -->
+                            -->
         
         <!--导航栏-->
         <style>
@@ -48,10 +47,10 @@
                 0% {
                     opacity: 0;
                 }
-                20%{
+                40%{
                     opacity: 0;
                 }
-                120%{
+                145%{
                     opacity: 1;
                 }
             }
@@ -133,10 +132,8 @@
             <div class="dropDownContent fadein">
                 <ul>
                     <li><img src="./logo.png" alt="logo" style="margin-left: 32%;"></li>
-                    <li><a href="./index.html">首页 </a></li>
                     <li><a href="http://backroomssandboxcn.wikidot.com/jwbujue">访问另一个官网 </a></li>
-                    <li><a href="./box.html">游戏箱 </a></li>
-                    <li><a href="./ack-list.html">致谢名单</a></li>
+                    <li><a href="./box.html">百宝箱 </a></li>
                     <li><a href="./update.html">更新日志 </a></li>
                     <li><a href="./join-our-server.html" style="margin-block-end: 100%; margin-bottom: 0%;">加入我们的MC服务器</a></li>
                 </ul>
@@ -194,18 +191,26 @@
             }
 
             var poem = [
+                "落霞与孤鹜齐飞 秋水共长天一色",
+                "寄蜉蝣于天地 渺沧海之一粟",
+                "萧瑟秋风今又是 换了人间",
                 "何方可化身千亿? 一树梅花一放翁",
                 "云横秦岭家何在  雪拥蓝关马不前",
                 "曾记否? 到中流击水  浪遏飞舟",
                 "羽檄从北来  厉马登高堤",
+                "娥儿雪柳黄金缕 笑语盈盈香暗去",
                 "四海翻腾云水怒  五洲震荡风雷激",
                 "秦皇岛外打鱼船  一片汪洋都不见 知问谁边?",
                 "长恨此身非我有  何时忘却营营",
                 "挟飞仙以遨游  抱明月而长终",
-                "全世界无产者联合起来!"
+                "https://jupiter-weiyun.github.io/client/game/tetris/src/control/todo/Jupiters-house.html"
             ]
             var length = poem.length;
-            document.getElementById("poem").innerHTML=poem[randomNum(0,length - 1)];
+            var time = new Date().getHours();
+            document.getElementById("poem").innerHTML=poem[randomNum(0,length - 2)];
+            if(time == 0){
+                document.getElementById("poem").innerHTML=poem[length - 1];
+            }
 
         </script>
 

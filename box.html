@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <!--网页自带小游戏-->
 <html>
-    <body>
+    <title>百宝箱</title>
+    <style>
+        .backGroundImg{
+            background-repeat:no-repeat;
+            width: 100%;
+            background-size: contain;
+            background-attachment: fixed;
+        }
+    </style>
+    <body style="
+        background-position: center center; 
+        object-fit: contain;
+        margin: 0%; 
+        background-image:url(./resource/pic/box.html.png);
+        background-position-x: left;
+        background-position-y: top;
+        background-size: 100% 100%;
+        background-size: cover;
+    " class="backGroundImg">
         <style>
             @font-face{
                 font-family: mcFont;
@@ -9,15 +27,33 @@
             }
         </style>
         <title>游戏箱</title>
-        <div>
-            <a href="./index.html">首页</a>
-            <p>游戏列表<br \></p>
+        <div style="
+            width: 100%;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            text-align: center;
+            color: #ffff;
+            font-family: mcFont;
+            background-color: rgba(79,79,79,75%);
+        ">
+            <h1>百宝箱<br \></h1>
         </div>
-        <div>
+        <div style="
+            margin-top: 5%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            padding-left: 3%;
+            width: 40%;
+            background-color: rgba(112,112,112,75%);
+            box-shadow: 8px 8px 8px #4a4f55;
+        ">
             <ul>
                 <li><a href="./game/tetris/docs/index.html">俄罗斯方块</a></li>
                 <li><a href="./game/2048/index.html">2048</a></li>
             </ul>
         </div>
+        <script>
+            window.alert("在午夜访问网站首页有彩蛋哦~");
+        </script>
     </body>
 </html>
