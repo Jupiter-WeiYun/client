@@ -54,7 +54,7 @@
                     opacity: 1;
                 }
             }
-
+            
 
             .fadein {
                 animation: fadein .5s;
@@ -225,6 +225,16 @@
             document.getElementById("poem").innerHTML=poem[randomNum(0,length - 2)];
             if(time == 0){
                 document.getElementById("poem").innerHTML=poem[length - 1];
+            }
+
+        </script>
+        <!--just a joke-->
+        
+        <script>
+            var month = new Date().getMonth;
+            var date = new Date().getDate();
+            if(month == 11 && date == 4){
+                window.alert("today is 11.4!");
             }
 
         </script>
